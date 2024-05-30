@@ -1,4 +1,6 @@
 
+import java.awt.List;
+import static java.lang.String.valueOf;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -201,7 +203,7 @@ public class listagemVIEW extends javax.swing.JFrame {
     private javax.swing.JTable listaProdutos;
     // End of variables declaration//GEN-END:variables
 
-    private void listarProdutos(){
+    public void listarProdutos(){
         try {
             ProdutosDAO produtosdao = new ProdutosDAO();
             
