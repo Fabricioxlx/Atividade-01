@@ -8,6 +8,7 @@
  * @author Adm
  */
 
+import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
@@ -23,9 +24,18 @@ public class ProdutosDAO {
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
     
     public void cadastrarProduto (ProdutosDTO produto){
-        
-        
-        //conn = new conectaDAO().connectDB();
+        conn = new conectaDAO().connectDB();
+        String sql = "insert into produtos (nome, valor, status) Values (?, ?, ?)";
+        try{
+            prep = conn.prepareStatement(sql);
+            prep.setString(1, produto.getNome());
+            prep.setInt(2, produto.getValor());
+            prep.setString(3, produto.getStatus());
+            prep.execute();
+            System.out.println("Produto Adicionado com sucesso!");
+        } catch(SQLException e) {
+            System.out.println("Erro ao Adicionar Produto: " + e.getMessage());
+        }
         
         
     }
