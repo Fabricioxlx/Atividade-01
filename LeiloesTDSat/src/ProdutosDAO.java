@@ -32,9 +32,12 @@ public class ProdutosDAO {
             prep.setInt(2, produto.getValor());
             prep.setString(3, produto.getStatus());
             prep.execute();
-            System.out.println("Produto Adicionado com sucesso!");
+            JOptionPane.showMessageDialog(null, "O Produto foi cadastrado com sucesso!");
         } catch(SQLException e) {
             System.out.println("Erro ao Adicionar Produto: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "O Produto não pôde ser cadastrado. Tente novamente mais tarde!");
+        } catch (java.lang.NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Digite um valor válido!");
         }
         
         
