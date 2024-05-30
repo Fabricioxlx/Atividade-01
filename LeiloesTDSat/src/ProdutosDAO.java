@@ -23,6 +23,18 @@ public class ProdutosDAO {
     ResultSet rs;
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
     
+    public void venderProduto(int id){
+        conn = new conectaDAO().connectDB();
+        String sql = "update produtos set status = \"Vendido\" where id = ?";
+        try{
+            prep = conn.prepareStatement(sql);
+            prep.setInt(1, id);
+            prep.execute();
+            JOptionPane.showMessageDialog(null, "Produto vendido com sucesso");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Produto não vendido");
+        }
+    }
     public void cadastrarProduto (ProdutosDTO produto){
         conn = new conectaDAO().connectDB();
         String sql = "insert into produtos (nome, valor, status) Values (?, ?, ?)";
