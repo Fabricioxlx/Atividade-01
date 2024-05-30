@@ -1,6 +1,5 @@
 
-import java.awt.List;
-import static java.lang.String.valueOf;
+
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -147,8 +146,9 @@ public class listagemVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
-        //vendasVIEW vendas = new vendasVIEW(); 
-        //vendas.setVisible(true);
+        vendasVIEW vendas = new vendasVIEW(); 
+        vendas.setVisible(true);
+        vendas.listarVendas();
     }//GEN-LAST:event_btnVendasActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
